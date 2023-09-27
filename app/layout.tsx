@@ -35,10 +35,10 @@ export default function RootLayout({
             </div>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex min-h-screen">
           <SideMenu />
+          <div className="w-full px-4 py-12">{children}</div>
         </div>
-        {children}
       </body>
     </html>
   );

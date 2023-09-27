@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import SideMenu from "@/components/ui/SideMenu";
 import Bee from "../public/images/bee.png";
 import Image from "next/image";
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,7 +43,20 @@ export default function RootLayout({
         </div>
         <div className="flex min-h-screen">
           <SideMenu />
-          <div className="w-full px-4 py-12">{children}</div>
+          <div className="w-full px-4 py-12">
+            <NextTopLoader
+              color="#f8ec3b"
+              initialPosition={0.08}
+              crawlSpeed={200}
+              height={3}
+              crawl={true}
+              showSpinner={true}
+              easing="ease"
+              speed={200}
+              shadow="0 0 10px #2299DD,0 0 5px #2299DD"
+            />
+            {children}
+          </div>
         </div>
       </body>
     </html>

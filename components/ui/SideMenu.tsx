@@ -5,8 +5,13 @@ import {
   PhotoIcon,
   Squares2X2Icon,
 } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const SideMenu = () => {
+  // const [selectedGallery, setSelectedGallery] = useState(true)
+  // const [selectedAlbums, setSelectedAlbums] = useState(true)
+  // const [selected, setSelected] = useState(true)
+
   return (
     <div className="pb-12 w-1/5">
       <div className="space-y-4 py-4">
@@ -16,19 +21,35 @@ const SideMenu = () => {
           </h2>
           <div className="space-y-1">
             <Button
+              asChild
               variant="secondary"
               className="w-full justify-start flex gap-2"
             >
-              <PhotoIcon className="w-5 h-5" />
-              Gallery
+              <Link href={"/gallery"}>
+                <PhotoIcon className="w-5 h-5" />
+                Gallery
+              </Link>
             </Button>
-            <Button variant="ghost" className="w-full justify-start flex gap-2">
-              <Squares2X2Icon className="w-5 h-5" />
-              Albums
+
+            <Button
+              asChild
+              variant="ghost"
+              className="w-full justify-start flex gap-2"
+            >
+              <Link href={"/albums"}>
+                <Squares2X2Icon className="w-5 h-5" />
+                Albums
+              </Link>
             </Button>
-            <Button variant="ghost" className="w-full justify-start flex gap-2">
-              <HeartIcon className="w-5 h-5" />
-              Favorites
+            <Button
+              asChild
+              variant="ghost"
+              className="w-full justify-start flex gap-2"
+            >
+              <Link href={"/favorites"}>
+                <HeartIcon className="w-5 h-5" />
+                Favorites
+              </Link>
             </Button>
           </div>
         </div>

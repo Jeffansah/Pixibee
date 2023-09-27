@@ -1,7 +1,7 @@
 import UploadButton from "./UploadButton";
 import cloudinary from "cloudinary";
-import { CldImage } from "next-cloudinary";
 import CloudImage from "./CloudImage";
+import ForceRefresh from "@/utils/ForceRefresh";
 
 export type SearchResult = {
   public_id: string;
@@ -14,11 +14,12 @@ const page = async () => {
     .expression("resource_type:image")
     .sort_by("created_at", "desc")
     .with_field("tags")
-    .max_results(5)
+    .max_results(30)
     .execute()) as { resources: SearchResult[] };
 
   return (
     <section>
+      <ForceRefresh />
       <div className="flex flex-col gap-y-8">
         <div className="flex justify-between">
           <h1 className="text-4xl font-bold">Gallery</h1>
@@ -29,6 +30,7 @@ const page = async () => {
           {results &&
             results.resources.map((item) => (
               <CloudImage
+                path="/gallery"
                 key={item.public_id}
                 imageResult={item}
                 alt={item.filename}

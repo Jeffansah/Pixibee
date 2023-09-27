@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import SideMenu from "@/components/ui/SideMenu";
+import Bee from "../public/images/bee.png";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +25,10 @@ export default function RootLayout({
           <div className="flex h-16 justify-between items-center px-4 container mx-auto">
             {/* <TeamSwitcher /> */}
             {/* <MainNav className="mx-6" /> */}
-            <h1 className="text-2xl font-bold">PIXIBEE</h1>
+            <div className="flex gap-x-2">
+              <h1 className="text-2xl font-bold ">PIXIBEE</h1>
+              <Image src={Bee} alt="logo" className="w-7 h-[26px]" />
+            </div>
             <div className=" flex items-center space-x-4">
               <Avatar>
                 <AvatarImage src="https://github.com/shadcn.png" />

@@ -8,10 +8,6 @@ import {
 import Link from "next/link";
 
 const SideMenu = () => {
-  // const [selectedGallery, setSelectedGallery] = useState(true)
-  // const [selectedAlbums, setSelectedAlbums] = useState(true)
-  // const [selected, setSelected] = useState(true)
-
   return (
     <div className="pb-12 w-1/5">
       <div className="space-y-4 py-4">

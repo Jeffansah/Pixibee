@@ -23,11 +23,11 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={inter.className}>
         <div className="border-b">
-          <div className="flex h-16 justify-between items-center px-4 container mx-auto">
+          <div className="flex h-16 justify-between items-center px-5">
             {/* <TeamSwitcher /> */}
             {/* <MainNav className="mx-6" /> */}
             <div className="flex gap-x-2">
-              <h1 className="text-2xl font-bold ">PIXIBEE</h1>
+              <h1 className="text-3xl font-bold ">PIXIBEE</h1>
               <Image src={Bee} alt="logo" className="w-7 h-[26px]" />
             </div>
             <div className=" flex items-center space-x-4">

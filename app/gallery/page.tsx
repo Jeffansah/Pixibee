@@ -2,6 +2,7 @@ import UploadButton from "./UploadButton";
 import cloudinary from "cloudinary";
 import CloudImage from "./CloudImage";
 import ForceRefresh from "@/utils/ForceRefresh";
+import ImageGrid from "@/components/ui/ImageGrid";
 
 export type SearchResult = {
   public_id: string;
@@ -19,26 +20,24 @@ const page = async () => {
 
   return (
     <section>
-      <ForceRefresh />
       <div className="flex flex-col gap-y-8">
         <div className="flex justify-between">
           <h1 className="text-4xl font-bold">Gallery</h1>
           <UploadButton results={results.resources} />
         </div>
 
-        <div className="grid grid-cols-4 gap-4">
-          {results &&
-            results.resources.map((item) => (
-              <CloudImage
-                path="/gallery"
-                key={item.public_id}
-                imageResult={item}
-                alt={item.filename}
-                width="400"
-                height="300"
-              />
-            ))}
-        </div>
+        <ImageGrid
+          images={results.resources}
+          getImage={(imageResult: SearchResult) => (
+            <CloudImage
+              key={imageResult.public_id}
+              imageResult={imageResult}
+              alt={imageResult.filename}
+              width="400"
+              height="300"
+            />
+          )}
+        />
       </div>
     </section>
   );

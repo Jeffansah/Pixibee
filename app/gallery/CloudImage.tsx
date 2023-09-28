@@ -8,6 +8,7 @@ import { MarkAsFavorite, RemoveAsFavorite } from "./actions";
 import { useTransition, useState, useEffect } from "react";
 import { SearchResult } from "./page";
 import { useRouter } from "next/navigation";
+import ImageMenu from "@/components/ui/ImageMenu";
 
 const CloudImage = (
   props: {
@@ -22,8 +23,12 @@ const CloudImage = (
   const [selected, setSelected] = useState(isFavorited);
 
   return (
-    <div className="relative">
-      <CldImage {...props} src={props.imageResult.public_id} />
+    <div className="relative overflow-hidden">
+      <CldImage
+        {...props}
+        src={props.imageResult.public_id}
+        className="cursor-pointer transition hover:scale-125 ease-in-out duration-500"
+      />
       {selected ? (
         <SolidHeart
           onClick={() => {
@@ -33,7 +38,7 @@ const CloudImage = (
               RemoveAsFavorite(props.imageResult.public_id);
             });
           }}
-          className="text-red-400 h-6 w-6 absolute top-2 right-2 cursor-pointer"
+          className="text-red-400 h-6 w-6 absolute top-2 left-2 cursor-pointer"
         />
       ) : (
         <HeartIcon
@@ -43,9 +48,10 @@ const CloudImage = (
               MarkAsFavorite(props.imageResult.public_id);
             });
           }}
-          className=" h-6 w-6 absolute top-2 right-2 cursor-pointer transition hover:scale-110 ease-in-out duration-200"
+          className=" h-6 w-6 absolute top-2 left-2 cursor-pointer transition hover:scale-110 ease-in-out duration-200"
         />
       )}
+      <ImageMenu image={props.imageResult} />
     </div>
   );
 };

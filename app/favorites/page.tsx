@@ -2,6 +2,7 @@ import cloudinary from "cloudinary";
 import CloudImage from "../gallery/CloudImage";
 import { SearchResult } from "../gallery/page";
 import FavoritesList from "./FavoritesList";
+import ForceRefresh from "@/utils/ForceRefresh";
 
 const page = async () => {
   const results = (await cloudinary.v2.search
@@ -13,6 +14,7 @@ const page = async () => {
 
   return (
     <section>
+      <ForceRefresh />
       <div className="flex flex-col gap-y-8">
         <div className="flex justify-between">
           <h1 className="text-4xl font-bold">Favorites</h1>

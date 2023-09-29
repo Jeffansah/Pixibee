@@ -31,10 +31,10 @@ const AddToAlbum = ({
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
+      <DialogTrigger asChild className="w-full rounded-sm">
         <Button
           variant="ghost"
-          className="flex justify-center gap-2 whitespace-nowrap"
+          className="flex gap-2 whitespace-nowrap py-[6px] px-[8px] h-[32px] justify-start"
         >
           <FolderPlusIcon className="w-4 h-4" />
           <p className="text-[13px]">Add to Album</p>

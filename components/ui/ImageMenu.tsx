@@ -13,10 +13,15 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Bars3Icon, FolderPlusIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  FolderPlusIcon,
+  PencilSquareIcon,
+} from "@heroicons/react/24/outline";
 import AddToAlbum from "./AddToAlbum";
 import { SearchResult } from "@/app/gallery/page";
 import { useState } from "react";
+import Link from "next/link";
 
 const ImageMenu = ({ image }: { image: SearchResult }) => {
   const [open, setOpen] = useState(false);
@@ -29,12 +34,18 @@ const ImageMenu = ({ image }: { image: SearchResult }) => {
             <Bars3Icon className="text-white w-4 h-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-36 p-0 cursor-pointer">
-          <DropdownMenuItem
-            className="flex gap-2 whitespace-nowrap justify-center items-center cursor-pointer"
-            asChild
-          >
+        <DropdownMenuContent className="w-36 cursor-pointer">
+          <DropdownMenuItem asChild>
             <AddToAlbum image={image} onClose={() => setOpen(false)} />
+          </DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer" asChild>
+            <Link
+              className="flex gap-2 whitespace-nowrap hover:bg-black"
+              href={`/edit?publicId=${encodeURIComponent(image.public_id)}`}
+            >
+              <PencilSquareIcon className="w-4 h-4" />
+              <p className="text-[13px]">Edit</p>
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

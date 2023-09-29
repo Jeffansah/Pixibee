@@ -14,10 +14,18 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+
 import { FolderPlusIcon } from "@heroicons/react/24/outline";
+
 import { useState } from "react";
 
-const AddToAlbum = ({ image }: { image: SearchResult }) => {
+const AddToAlbum = ({
+  image,
+  onClose,
+}: {
+  image: SearchResult;
+  onClose: () => void;
+}) => {
   const [album, setAlbum] = useState("");
   const [open, setOpen] = useState(false);
 
@@ -45,7 +53,9 @@ const AddToAlbum = ({ image }: { image: SearchResult }) => {
               Album
             </Label>
             <Input
-              onChange={(e) => setAlbum(e.target.value)}
+              onChange={(e) => {
+                setAlbum(e.target.value);
+              }}
               id="album"
               value={album}
               className="col-span-3"
@@ -56,6 +66,7 @@ const AddToAlbum = ({ image }: { image: SearchResult }) => {
           <Button
             onClick={async () => {
               setOpen(false);
+              onClose();
               await addImageToAlbum(album, image);
             }}
             type="submit"

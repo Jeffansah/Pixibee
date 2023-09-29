@@ -1,5 +1,6 @@
 import cloudinary from "cloudinary";
 import AlbumCard from "./AlbumCard";
+import ForceRefresh from "@/utils/ForceRefresh";
 
 export type AlbumType = {
   name: string;
@@ -15,6 +16,7 @@ const page = async () => {
 
   return (
     <section>
+      <ForceRefresh />
       <div className="flex flex-col gap-y-8">
         <div className="flex justify-between">
           <h1 className="text-4xl font-bold">Albums</h1>

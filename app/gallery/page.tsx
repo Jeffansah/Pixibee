@@ -23,8 +23,6 @@ const page = async ({
     .max_results(30)
     .execute()) as { resources: SearchResult[] };
 
-  console.log(results.resources);
-
   return (
     <section>
       <div className="flex flex-col gap-y-8">

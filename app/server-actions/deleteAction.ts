@@ -3,7 +3,5 @@
 import cloudinary from "cloudinary";
 
 export const deletePicture = async (publicId: string) => {
-  cloudinary.v2.uploader
-    .destroy(publicId)
-    .then((result) => console.log(result));
+  cloudinary.v2.uploader.destroy(publicId);
 };

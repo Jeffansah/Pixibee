@@ -6,6 +6,7 @@ import SideMenu from "@/components/ui/SideMenu";
 import Bee from "../public/images/bee.png";
 import Image from "next/image";
 import NextTopLoader from "nextjs-toploader";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,10 +25,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="border-b">
           <div className="flex h-16 justify-between items-center px-5">
-            <div className="flex gap-x-2">
-              <h1 className="text-3xl font-bold ">PIXIBEE</h1>
+            <Link href="/" className="flex gap-x-2">
+              <h1 className="text-3xl font-bold cursor-pointer">PIXIBEE</h1>
               <Image src={Bee} alt="logo" className="w-7 h-[26px]" />
-            </div>
+            </Link>
             <div className=" flex items-center space-x-4">
               <Avatar>
                 <AvatarImage src="https://github.com/shadcn.png" />

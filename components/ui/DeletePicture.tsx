@@ -40,15 +40,15 @@ const DeletePicture = ({
           <p className="text-[13px]">Delete Photo</p>
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="max-md:max-w-[95vw] max-md:rounded-sm">
         <DialogHeader>
           <DialogTitle>Delete Photo</DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="whitespace-nowrap">
             Are you sure you want to delete this photo?
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <div className="flex gap-4">
+          <div className="flex gap-4 max-md:justify-center">
             <Button
               variant="secondary"
               onClick={async () => {

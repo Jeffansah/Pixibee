@@ -44,10 +44,10 @@ const AddToAlbum = ({
           <p className="text-[13px]">Add to Album</p>
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="max-md:max-w-[95vw] max-md:rounded-sm">
         <DialogHeader>
           <DialogTitle>Add to Album</DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="max-md:whitespace-nowrap">
             Enter an album you want to move this image into.
           </DialogDescription>
         </DialogHeader>

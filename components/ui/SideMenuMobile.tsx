@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "./button";
 import {
   ChevronDownIcon,
@@ -7,24 +9,34 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import cloudinary from "cloudinary";
+
 import { AlbumType } from "@/app/albums/page";
 import SideMenuTabs from "./SideMenuTabs";
+import { getFolders } from "@/app/server-actions/getFoldersAction";
 
-const SideMenu = ({ folders }: { folders: AlbumType[] }) => {
+const SideMenuMobile = ({
+  open,
+  folders,
+}: {
+  open: boolean;
+  folders: AlbumType[];
+}) => {
   return (
-    <div className="pb-12 w-1/5 max-lg:hidden">
+    <div
+      className={`bg-black rounded-sm max-h-max absolute top-0 w-52 md:w-64 right-0 z-50 lg:hidden ${
+        !open && "hidden"
+      }`}
+    >
       <div className="space-y-4 py-4">
         <div className="px-3 py-2">
           <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
             Manage
           </h2>
-          <div className="space-y-1">
-            <SideMenuTabs folders={folders} />
-          </div>
+          <div className="space-y-1">{<SideMenuTabs folders={folders} />}</div>
         </div>
       </div>
     </div>
   );
 };
 
-export default SideMenu;
+export default SideMenuMobile;

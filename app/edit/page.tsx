@@ -29,7 +29,7 @@ const Page = ({
     <section>
       <div className="flex flex-col gap-8">
         <div className="flex justify-between">
-          <h1 className="text-4xl font-bold">Edit Photo</h1>
+          <h1 className="text-4xl font-bold max-md:text-3xl">Edit Photo</h1>
         </div>
         <div className="flex gap-4 flex-wrap whitespace-nowrap">
           <Button
@@ -52,6 +52,7 @@ const Page = ({
                   value={pendingPrompt}
                   onChange={(e) => setPendingPrompt(e.currentTarget.value)}
                   placeholder="Enter a prompt"
+                  className="max-lg:text-base"
                 ></Input>
                 <Button
                   variant={"secondary"}

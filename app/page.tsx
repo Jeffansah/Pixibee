@@ -21,7 +21,7 @@ const Page = async () => {
     <section>
       <div className="flex flex-col gap-y-8">
         <div className="flex justify-between">
-          <h1 className="text-4xl font-bold">Gallery</h1>
+          <h1 className="text-4xl font-bold max-md:text-3xl">Gallery</h1>
           <UploadButton results={results.resources} />
         </div>
 

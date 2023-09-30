@@ -30,7 +30,7 @@ const SearchForm = ({ initialSearch }: { initialSearch: string }) => {
           id="tag-name"
           value={tagName}
           placeholder="Enter a photo description"
-          className="w-60"
+          className="w-60 max-lg:text-base"
         />
         <Button>Search</Button>
       </div>

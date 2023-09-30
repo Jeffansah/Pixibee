@@ -20,7 +20,7 @@ const Page = async () => {
       <ForceRefresh />
       <div className="flex flex-col gap-y-8">
         <div className="flex justify-between">
-          <h1 className="text-4xl font-bold">Favorites</h1>
+          <h1 className="text-4xl font-bold max-lg:text-3xl">Favorites</h1>
         </div>
         <FavoritesList initialResources={results.resources} />
       </div>

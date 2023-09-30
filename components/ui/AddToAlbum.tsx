@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 import { FolderPlusIcon } from "@heroicons/react/24/outline";
+import { usePathname, useRouter } from "next/navigation";
 
 import { useState } from "react";
 
@@ -28,6 +29,9 @@ const AddToAlbum = ({
 }) => {
   const [album, setAlbum] = useState("");
   const [open, setOpen] = useState(false);
+
+  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -68,6 +72,8 @@ const AddToAlbum = ({
               setOpen(false);
               onClose();
               await addImageToAlbum(album, image);
+              router.replace(pathname);
+              router.refresh();
             }}
             type="submit"
           >

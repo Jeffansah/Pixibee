@@ -23,7 +23,7 @@ const SideMenuMobile = ({
 }) => {
   return (
     <div
-      className={`bg-black rounded-sm max-h-max absolute top-0 w-52 md:w-64 right-0 z-50 lg:hidden ${
+      className={`bg-black rounded-sm max-h-max absolute top-0 w-64 md:w-[20rem] right-0 z-50 lg:hidden ${
         !open && "hidden"
       }`}
     >

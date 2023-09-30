@@ -36,8 +36,8 @@ const DeletePicture = ({
           variant="ghost"
           className="flex gap-2 whitespace-nowrap py-[6px] px-[8px] h-[32px] justify-start"
         >
-          <TrashIcon className="w-4 h-4" />
-          <p className="text-[13px]">Delete Photo</p>
+          <TrashIcon className="w-4 h-4 max-lg:w-5 max-lg:h-5" />
+          <p className="text-[13px] max-lg:text-base">Delete Photo</p>
         </Button>
       </DialogTrigger>
       <DialogContent className="max-md:max-w-[95vw] max-md:rounded-sm">

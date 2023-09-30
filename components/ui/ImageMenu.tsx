@@ -35,7 +35,7 @@ const ImageMenu = ({ image }: { image: SearchResult }) => {
             <Bars3Icon className="text-white w-4 h-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-36 cursor-pointer">
+        <DropdownMenuContent className="w-36 max-lg:w-48 cursor-pointer">
           <DropdownMenuItem asChild>
             <AddToAlbum image={image} onClose={() => setOpen(false)} />
           </DropdownMenuItem>
@@ -44,8 +44,8 @@ const ImageMenu = ({ image }: { image: SearchResult }) => {
               className="flex gap-2 whitespace-nowrap hover:bg-black"
               href={`/edit?publicId=${encodeURIComponent(image.public_id)}`}
             >
-              <PencilSquareIcon className="w-4 h-4" />
-              <p className="text-[13px]">Edit Photo</p>
+              <PencilSquareIcon className="w-4 h-4 max-lg:w-5 max-lg:h-5" />
+              <p className="text-[13px] max-lg:text-base">Edit Photo</p>
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>

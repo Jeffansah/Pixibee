@@ -44,7 +44,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## Usage
 
-1. Uploading and manage your images.
+1. Upload and manage your images.
 
 2. Explore the advanced image editing features.
 

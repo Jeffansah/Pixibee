@@ -3,6 +3,7 @@ import cloudinary from "cloudinary";
 import CloudImage from "./CloudImage";
 import ForceRefresh from "@/utils/ForceRefresh";
 import ImageGrid from "@/components/ui/ImageGrid";
+import SearchForm from "@/components/ui/SearchForm";
 
 export type SearchResult = {
   public_id: string;
@@ -10,13 +11,19 @@ export type SearchResult = {
   tags: string[];
 };
 
-const page = async () => {
+const page = async ({
+  searchParams: { search },
+}: {
+  searchParams: { search: string };
+}) => {
   const results = (await cloudinary.v2.search
-    .expression("resource_type:image")
+    .expression(`resource_type:image${search ? ` AND tags=${search}` : ""}`)
     .sort_by("created_at", "desc")
     .with_field("tags")
     .max_results(30)
     .execute()) as { resources: SearchResult[] };
+
+  console.log(results.resources);
 
   return (
     <section>
@@ -26,6 +33,7 @@ const page = async () => {
           <UploadButton results={results.resources} />
         </div>
 
+        <SearchForm initialSearch={search} />
         <ImageGrid
           images={results.resources}
           getImage={(imageResult: SearchResult) => (
@@ -38,6 +46,11 @@ const page = async () => {
             />
           )}
         />
+        {results.resources.length < 1 && (
+          <p className="font-normal text-base">
+            No photos by {search} tag in your gallery
+          </p>
+        )}
       </div>
     </section>
   );

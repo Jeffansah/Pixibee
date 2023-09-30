@@ -4,7 +4,7 @@ import { SearchResult } from "../gallery/page";
 import FavoritesList from "./FavoritesList";
 import ForceRefresh from "@/utils/ForceRefresh";
 
-const page = async () => {
+const Page = async () => {
   const results = (await cloudinary.v2.search
     .expression("resource_type:image AND tags=favorite")
     .sort_by("created_at", "desc")
@@ -25,4 +25,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Page;

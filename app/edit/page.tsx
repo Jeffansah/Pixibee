@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { CldImage } from "next-cloudinary";
 import { useState } from "react";
 
-const page = ({
+const Page = ({
   searchParams: { publicId },
 }: {
   searchParams: { publicId: string };
@@ -159,4 +159,4 @@ const page = ({
   );
 };
 
-export default page;
+export default Page;

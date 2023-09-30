@@ -7,7 +7,7 @@ export type AlbumType = {
   path: string;
 };
 
-const page = async () => {
+const Page = async () => {
   const result = (await cloudinary.v2.api.root_folders()) as {
     folders: AlbumType[];
   };
@@ -31,4 +31,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Page;

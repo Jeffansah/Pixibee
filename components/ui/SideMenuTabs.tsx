@@ -58,7 +58,7 @@ const SideMenuTabs = ({
       {folders.map(
         (folder) =>
           open && (
-            <div className="flex flex-col mt-1">
+            <div className="flex flex-col mt-1" key={folder.path}>
               <p
                 className={`text-xs pl-12 mb-2  hover:text-white focus:text-white cursor-pointer ${
                   pathname === `/albums/${folder.path}`

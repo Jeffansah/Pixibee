@@ -9,7 +9,7 @@ export type SearchResult = {
   tags: string[];
 };
 
-const page = async () => {
+const Page = async () => {
   const results = (await cloudinary.v2.search
     .expression("resource_type:image")
     .sort_by("created_at", "desc")
@@ -42,4 +42,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Page;

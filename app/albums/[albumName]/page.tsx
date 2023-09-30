@@ -4,7 +4,7 @@ import ImageGrid from "@/components/ui/ImageGrid";
 import CloudImage from "@/app/gallery/CloudImage";
 import { SearchResult } from "@/app/gallery/page";
 
-const page = async ({
+const Page = async ({
   params: { albumName },
 }: {
   params: { albumName: string };
@@ -41,4 +41,4 @@ const page = async ({
   );
 };
 
-export default page;
+export default Page;

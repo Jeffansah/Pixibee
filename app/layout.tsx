@@ -24,8 +24,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="border-b">
           <div className="flex h-16 justify-between items-center px-5">
-            {/* <TeamSwitcher /> */}
-            {/* <MainNav className="mx-6" /> */}
             <div className="flex gap-x-2">
               <h1 className="text-3xl font-bold ">PIXIBEE</h1>
               <Image src={Bee} alt="logo" className="w-7 h-[26px]" />
@@ -35,9 +33,6 @@ export default function RootLayout({
                 <AvatarImage src="https://github.com/shadcn.png" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
-
-              {/* <Search /> */}
-              {/* <UserNav /> */}
             </div>
           </div>
         </div>

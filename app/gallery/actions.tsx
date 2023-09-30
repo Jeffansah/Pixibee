@@ -1,7 +1,6 @@
 "use server";
 
 import cloudinary from "cloudinary";
-import { revalidatePath } from "next/cache";
 
 export const MarkAsFavorite = async (publicId: string) => {
   cloudinary.v2.uploader

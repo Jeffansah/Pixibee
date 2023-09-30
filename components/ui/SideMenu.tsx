@@ -1,13 +1,22 @@
-import React from "react";
 import { Button } from "./button";
 import {
+  ChevronDownIcon,
   HeartIcon,
   PhotoIcon,
   Squares2X2Icon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import cloudinary from "cloudinary";
+import { AlbumType } from "@/app/albums/page";
+import SideMenuTabs from "./SideMenuTabs";
 
-const SideMenu = () => {
+const SideMenu = async () => {
+  const result = (await cloudinary.v2.api.root_folders()) as {
+    folders: AlbumType[];
+  };
+
+  const { folders } = result;
+
   return (
     <div className="pb-12 w-1/5">
       <div className="space-y-4 py-4">
@@ -16,37 +25,7 @@ const SideMenu = () => {
             Manage
           </h2>
           <div className="space-y-1">
-            <Button
-              asChild
-              variant="secondary"
-              className="w-full justify-start flex gap-2"
-            >
-              <Link href={"/gallery"}>
-                <PhotoIcon className="w-5 h-5" />
-                Gallery
-              </Link>
-            </Button>
-
-            <Button
-              asChild
-              variant="ghost"
-              className="w-full justify-start flex gap-2"
-            >
-              <Link href={"/albums"}>
-                <Squares2X2Icon className="w-5 h-5" />
-                Albums
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="ghost"
-              className="w-full justify-start flex gap-2"
-            >
-              <Link href={"/favorites"}>
-                <HeartIcon className="w-5 h-5" />
-                Favorites
-              </Link>
-            </Button>
+            <SideMenuTabs folders={folders} />
           </div>
         </div>
       </div>

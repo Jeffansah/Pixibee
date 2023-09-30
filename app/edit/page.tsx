@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { CldImage } from "next-cloudinary";
 import { useState } from "react";
 
@@ -20,6 +21,10 @@ const page = ({
     | "darken"
   >();
 
+  const [open, setOpen] = useState(false);
+  const [aiPrompt, setAiPrompt] = useState("");
+  const [pendingPrompt, setPendingPrompt] = useState("");
+
   return (
     <section>
       <div className="flex flex-col gap-8">
@@ -33,9 +38,35 @@ const page = ({
           >
             Clear All
           </Button>
-          <Button onClick={() => setTransformation("generative-fill")}>
-            Generative Fill (In Beta)
-          </Button>
+          <div className="flex flex-col gap-3">
+            <Button
+              onClick={() => {
+                setOpen(!open);
+              }}
+            >
+              Generative Fill (In Beta)
+            </Button>
+            {open && (
+              <div className="relative">
+                <Input
+                  value={pendingPrompt}
+                  onChange={(e) => setPendingPrompt(e.currentTarget.value)}
+                  placeholder="Enter a prompt"
+                ></Input>
+                <Button
+                  variant={"secondary"}
+                  className="w-9 h-6 absolute right-2 top-2"
+                  onClick={() => {
+                    setAiPrompt(pendingPrompt);
+                    setTransformation("generative-fill");
+                  }}
+                >
+                  Go
+                </Button>
+              </div>
+            )}
+          </div>
+
           <Button onClick={() => setTransformation("blur")}>Blur</Button>
           <Button onClick={() => setTransformation("grayscale")}>
             Grayscale
@@ -57,11 +88,13 @@ const page = ({
           {transformation === "generative-fill" && (
             <CldImage
               src={publicId}
-              width={400}
+              width={600}
               height={500}
               alt={publicId}
               crop="pad"
-              fillBackground
+              fillBackground={{
+                prompt: aiPrompt,
+              }}
             />
           )}
           {transformation === "blur" && (

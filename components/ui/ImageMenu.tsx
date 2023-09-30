@@ -22,6 +22,7 @@ import AddToAlbum from "./AddToAlbum";
 import { SearchResult } from "@/app/gallery/page";
 import { useState } from "react";
 import Link from "next/link";
+import DeletePicture from "./DeletePicture";
 
 const ImageMenu = ({ image }: { image: SearchResult }) => {
   const [open, setOpen] = useState(false);
@@ -44,8 +45,11 @@ const ImageMenu = ({ image }: { image: SearchResult }) => {
               href={`/edit?publicId=${encodeURIComponent(image.public_id)}`}
             >
               <PencilSquareIcon className="w-4 h-4" />
-              <p className="text-[13px]">Edit</p>
+              <p className="text-[13px]">Edit Photo</p>
             </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <DeletePicture image={image} onClose={() => setOpen(false)} />
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

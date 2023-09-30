@@ -7,6 +7,9 @@ export type AlbumType = {
   path: string;
 };
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const Page = async () => {
   const result = (await cloudinary.v2.api.root_folders()) as {
     folders: AlbumType[];

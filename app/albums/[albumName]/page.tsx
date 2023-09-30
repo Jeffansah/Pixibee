@@ -4,6 +4,9 @@ import ImageGrid from "@/components/ui/ImageGrid";
 import CloudImage from "@/app/gallery/CloudImage";
 import { SearchResult } from "@/app/gallery/page";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const Page = async ({
   params: { albumName },
 }: {

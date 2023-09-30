@@ -11,6 +11,9 @@ export type SearchResult = {
   tags: string[];
 };
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const page = async ({
   searchParams: { search },
 }: {

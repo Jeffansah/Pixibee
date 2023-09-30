@@ -44,13 +44,11 @@ Before you begin, ensure you have met the following requirements:
 
 ## Usage
 
-1. Sign up or log in to your Pixibee account.
+1. Uploading and manage your images.
 
-2. Start uploading and managing your images.
+2. Explore the advanced image editing features.
 
-3. Explore the advanced image editing features.
-
-4. Organize your images into albums or categories.
+3. Organize your images into albums or categories.
 
 ## Contributing
 

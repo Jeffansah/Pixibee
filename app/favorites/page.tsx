@@ -4,6 +4,9 @@ import { SearchResult } from "../gallery/page";
 import FavoritesList from "./FavoritesList";
 import ForceRefresh from "@/utils/ForceRefresh";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const Page = async () => {
   const results = (await cloudinary.v2.search
     .expression("resource_type:image AND tags=favorite")

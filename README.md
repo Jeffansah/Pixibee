@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pixibee - Cloud Image Storing and Editing App
+
+Pixibee is a powerful cloud image storing and editing application built with Next.js, TypeScript, and Cloudinary. It offers a seamless experience for securely storing, managing, and enhancing your image collection. Whether you're a photographer, designer, or simply an image enthusiast, Pixibee has you covered.
+
+## Features
+
+- **Cloudinary Integration**: Pixibee harnesses the capabilities of Cloudinary for efficient and secure photo storage and updates.
+
+- **Shadcn UI**: The user interface is crafted using the elegant Shadcn UI library, providing a visually stunning and intuitive experience.
+
+- **Advanced Image Editing**: Pixibee goes beyond basic image storage by offering advanced image editing features, including AI generative fill.
+
+- **Image Organization**: Easily organize and categorize your image collection for quick access.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Before you begin, ensure you have met the following requirements:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js and npm installed
+- Cloudinary API credentials
+- [Optional] Cloudinary AI features enabled
+- [Optional] Other prerequisites
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository:
 
-## Learn More
+   git clone https://github.com/Jeffansah/Pixibee.git
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   cd Pixibee
+   npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Configure your Cloudinary credentials in the app.
 
-## Deploy on Vercel
+4. Start the development server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   npm run dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+5. Open your browser and visit http://localhost:3000.
+
+## Usage
+
+1. Sign up or log in to your Pixibee account.
+
+2. Start uploading and managing your images.
+
+3. Explore the advanced image editing features.
+
+4. Organize your images into albums or categories.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to Pixibee, please follow these steps:
+
+1. Fork the repository.
+
+2. Create a new branch for your feature or bug fix.
+
+3. Make your changes and test them thoroughly.
+
+4. Commit your changes with clear and descriptive commit messages.
+
+5. Push your changes to your forked repository.
+
+6. Submit a pull request to the main repository.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Next.js
+
+- Cloudinary
+
+- Shadcn-UI

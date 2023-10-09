@@ -9,6 +9,9 @@ export type SearchResult = {
   tags: string[];
 };
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const Page = async () => {
   const results = (await cloudinary.v2.search
     .expression("resource_type:image")
